@@ -17,5 +17,19 @@
 import './commands';
 import 'cypress-mochawesome-reporter/register';
 
+beforeEach(() => {
+    if (!window.navigator || !navigator.serviceWorker) {
+      return null;
+    }
+    const cypressPromise = new Cypress.Promise((resolve, reject) => {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        if(!registrations.length) resolve();
+        Promise.all(registrations).then(() => {
+          resolve();
+        });
+      });
+    });
+    cy.wrap('Unregister service workers').then(() => cypressPromise)
+  });
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
