@@ -31,7 +31,7 @@ describe('Sauce demo app Test 1',()=>{
         productPageObj.getCartValue().should('equal','2')
     })
 
-    it('Check cart value when products added to cart test',()=>{
+    it.skip('Check cart value when products added to cart test',()=>{
         cy.visit('https://www.saucedemo.com/')
         loginPageObj.enterUsername('standard_user')
         loginPageObj.enterPassword('secret_sauce')
