@@ -13,7 +13,7 @@ const overviewPageObj=new overviewPageClass
 describe('Sauce demo app Test 2',()=>{
  
     it('Check cart value when products removed from cart test',()=>{
-        cy.visit('https://www.saucedemo.com/')
+        cy.visit('https://www.saucedemo.com/', {headers : {"Accept-Encoding":"gzip, deflate"}})
         loginPageObj.enterUsername('standard_user')
         loginPageObj.enterPassword('secret_sauce')
         loginPageObj.clickOnLoginButton()
@@ -31,7 +31,7 @@ describe('Sauce demo app Test 2',()=>{
     })
 
     it('Check filter in products page test',()=>{
-        cy.visit('https://www.saucedemo.com/')
+        cy.visit('https://www.saucedemo.com/', {headers : {"Accept-Encoding":"gzip, deflate"}})
         loginPageObj.enterUsername('standard_user')
         loginPageObj.enterPassword('secret_sauce')
         loginPageObj.clickOnLoginButton()
@@ -47,7 +47,7 @@ describe('Sauce demo app Test 2',()=>{
     })
     
     it('Check products added in cart page test',()=>{
-        cy.visit('https://www.saucedemo.com/')
+        cy.visit('https://www.saucedemo.com/', {headers : {"Accept-Encoding":"gzip, deflate"}})
         loginPageObj.enterUsername('standard_user')
         loginPageObj.enterPassword('secret_sauce')
         loginPageObj.clickOnLoginButton()

@@ -13,7 +13,7 @@ const overviewPageObj=new overviewPageClass
 describe('Sauce demo app Test 3',()=>{
 
     it('Check registration with valid information that allow navigation to Overview page test',()=>{
-        cy.visit('https://www.saucedemo.com/')
+        cy.visit('https://www.saucedemo.com/', {headers : {"Accept-Encoding":"gzip, deflate"}})
         loginPageObj.enterUsername('standard_user')
         loginPageObj.enterPassword('secret_sauce')
         loginPageObj.clickOnLoginButton()
@@ -35,7 +35,7 @@ describe('Sauce demo app Test 3',()=>{
 
 	
     it('complete e2e process on saucedemo application test',()=>{
-        cy.visit('https://www.saucedemo.com/')
+        cy.visit('https://www.saucedemo.com/', {headers : {"Accept-Encoding":"gzip, deflate"}})
         loginPageObj.enterUsername('standard_user')
         loginPageObj.enterPassword('secret_sauce')
         loginPageObj.clickOnLoginButton()
